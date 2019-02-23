@@ -223,18 +223,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void rePaint(){
-        correctAll=scores[0]+"~"+attempt[0]+"/";
-        correct1=scores[1]+"~"+attempt[1]+"/";
-        correct2=scores[2]+"~"+attempt[2]+"/";
+        correctAll=scores[0]+"/";
         TextView score1=findViewById(R.id.progress1);
-        TextView score2=findViewById(R.id.progress2);
-        TextView score3=findViewById(R.id.progress3);
+        TextView score11=findViewById(R.id.progress11);
         score1.setText(correctAll+questions.size());
+        correctAll=attempt[0]+"/";
+        score11.setText(correctAll+questions.size());
+
+        correct1=scores[1]+"/";
+        TextView score2=findViewById(R.id.progress2);
+        TextView score22=findViewById(R.id.progress22);
         TextView category=findViewById(R.id.category2);
         score2.setText(correct1+""+categories.get(category.getText()).size());
+        correct1=attempt[1]+"/";
+        score22.setText(correct1+""+categories.get(category.getText()).size());
+
+        correct2=scores[2]+"/";
+        TextView score3=findViewById(R.id.progress3);
+        TextView score33=findViewById(R.id.progress33);
         category=findViewById(R.id.category3);
         score3.setText(correct2+""+categories.get(category.getText()).size());
-        System.out.println(unanswered.size());
+        correct2=attempt[2]+"/";
+        score33.setText(correct2+""+categories.get(category.getText()).size());
     }
 
     @Override

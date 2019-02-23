@@ -31,15 +31,42 @@
                     android:textSize="18sp"
                     android:gravity="center_horizontal"/>
 
-                <TextView
-                    android:id="@+id/progress1"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="0/20"
-                    android:textSize="30dp"
-                    android:gravity="center_horizontal"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Correct :"
+                        android:textSize="15dp"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/progress1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/20"
+                        android:textSize="30dp"
+                        android:gravity="center"
+                        android:textStyle="italic"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Attempted :"
+                        android:textSize="15dp"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/progress11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0/20"
+                        android:layout_weight="1"
+                        android:textSize="30dp"
+                        android:textStyle="italic" />
+
+                </LinearLayout>
                 <Button
                     android:id="@+id/button"
                     android:layout_width="wrap_content"
@@ -73,15 +100,42 @@
                     android:textColor="#000"
                     android:textSize="18sp"
                     android:gravity="center_horizontal"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Correct :"
+                    android:textSize="15dp"
+                    android:layout_weight="1"/>
+                <TextView
                     android:id="@+id/progress2"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0/20"
-                    android:gravity="center_horizontal"
                     android:textSize="30dp"
-                    android:textStyle="bold" />
+                    android:gravity="center"
+                    android:textStyle="italic"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Attempted:"
+                    android:textSize="15dp"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:id="@+id/progress22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0/20"
+                    android:layout_weight="1"
+                    android:textSize="30dp"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
 
                 <Button
                     android:id="@+id/button1"
@@ -116,14 +170,42 @@
                     android:textSize="18sp"
                     android:gravity="center_horizontal"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Correct :"
+                    android:textSize="15dp"
+                    android:layout_weight="1"/>
                 <TextView
                     android:id="@+id/progress3"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0/20"
-                    android:gravity="center_horizontal"
                     android:textSize="30dp"
-                    android:textStyle="bold" />
+                    android:gravity="center"
+                    android:textStyle="italic"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Attempted :"
+                    android:textSize="15dp"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:id="@+id/progress33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0/20"
+                    android:layout_weight="1"
+                    android:textSize="30dp"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
 
                 <Button
                     android:id="@+id/button2"

@@ -137,14 +137,14 @@
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
+
         <Button
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:clickable="true"
-            android:layout_gravity="end"
             android:text="Next"
-            android:background="@drawable/arrowshape"
+            android:layout_gravity="right"
             android:onClick="next"
             app:layout_anchorGravity="bottom|right|end" />
 
