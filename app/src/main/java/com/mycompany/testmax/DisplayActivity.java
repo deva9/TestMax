@@ -34,6 +34,7 @@ public class DisplayActivity extends AppCompatActivity {
         Intent intent=getIntent();
         categoryIntent=intent.getStringExtra("Category");
         idx=intent.getIntExtra("Idx",-1);
+        System.out.println(idx);
         all=new ArrayList<>();
         section=new ArrayList<>();
         answers=new ArrayList<>();
@@ -46,9 +47,6 @@ public class DisplayActivity extends AppCompatActivity {
             }
         }
         scrollView=findViewById(R.id.scroller);
-//        System.out.println("Before: "+section+"\n\n\n");
-//        System.out.println(all+"\n\n\n");
-//        System.out.println(idx+"\n\n\n");
         d=(section.isEmpty())?"All":value;
         if(section.isEmpty())
             section=new ArrayList<>(all);
@@ -73,6 +71,7 @@ public class DisplayActivity extends AppCompatActivity {
             return;
         }
         CardView card=findViewById(R.id.cardAll);
+        card.setRadius(60);
         Collections.shuffle(section);
         key=section.get(0);
         answers=new ArrayList<>(MainActivity.allAnswer.get(key));
@@ -97,16 +96,16 @@ public class DisplayActivity extends AppCompatActivity {
         String correctAnswer=MainActivity.correctAns.get(key);
         wrongIndex = ((LinearLayout) cardView.getParent()).indexOfChild(cardView);
         if(correctAnswer.equals(ans)) {
-            cardView.setBackgroundColor(Color.parseColor("#00ff00"));
+            cardView.setBackgroundColor(Color.parseColor("#66b032"));
             updateScores(true,idx);
         }
         else {
-            cardView.setBackgroundColor(Color.parseColor("#ff0000"));
+            cardView.setBackgroundColor(Color.parseColor("#fe2612"));
             for(int i=1;i<viewGroup.getChildCount();i++){
                 CardView temp=(CardView) viewGroup.getChildAt(i);
                 TextView answerText=((TextView)temp.getChildAt(0));
                 if(answerText.getText().toString().equals(correctAnswer)) {
-                    temp.setBackgroundColor(Color.parseColor("#00ff00"));
+                    temp.setBackgroundColor(Color.parseColor("#66b032"));
                     correctIndex=i;
                     break;
                 }
@@ -125,7 +124,7 @@ public class DisplayActivity extends AppCompatActivity {
     }
 
     public void updateScores(boolean flag, int idx) {
-        int count = 1;
+        int count = -1;
         MainActivity.attempt[idx]++;
         if (idx != 0)
             MainActivity.attempt[0]++;
@@ -137,14 +136,14 @@ public class DisplayActivity extends AppCompatActivity {
                 count++;
             }
             MainActivity.attempt[count]++;
-            System.out.println("Count: " + count);
         }
         if(flag){
             MainActivity.scores[idx]++;
             if (idx!=0)
                 MainActivity.scores[0]++;
-            else
+            else {
                 MainActivity.scores[count]++;
+            }
         }
     }
 

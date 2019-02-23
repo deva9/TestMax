@@ -10,7 +10,9 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:layout_marginBottom="40dp">
 
     <TextView
         android:id="@+id/categoryValue"
@@ -18,7 +20,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:textSize="20dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
@@ -33,7 +35,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#e5e5e5">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -42,16 +45,14 @@
                 android:id="@+id/question"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_margin="4dp"
                 android:textColor="#000"
-                android:textSize="18sp"
-                android:gravity="center_horizontal"/>
+                android:textSize="18sp" />
             </LinearLayout>
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150dp"
                 android:layout_margin="10dp"
                 android:id="@+id/Answer1"
                 android:onClick="checkAnswer">
@@ -60,18 +61,19 @@
                         android:id="@+id/Answert1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
+                        android:layout_margin="4dp"
                         android:textColor="#000"
                         android:textSize="18sp"
-                        android:gravity="center_horizontal"/>
+                        android:gravity="center_horizontal"
+                        android:padding="10dp" />
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150dp"
                 android:layout_margin="10dp"
+                android:elevation="10px"
                 android:id="@+id/Answer2"
                 android:onClick="checkAnswer">
                 <!-- content goes here -->
@@ -79,67 +81,73 @@
                     android:id="@+id/Answert2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+                    android:layout_margin="4dp"
                     android:textColor="#000"
                     android:textSize="18sp"
-                    android:gravity="center_horizontal"/>
+                    android:gravity="center_horizontal"
+                    android:padding="10dp" />
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150dp"
                 android:layout_margin="10dp"
                 android:id="@+id/Answer3"
+                android:elevation="10px"
                 android:onClick="checkAnswer">
                 <!-- content goes here -->
                 <TextView
                     android:id="@+id/Answert3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+                    android:layout_margin="4dp"
                     android:textColor="#000"
                     android:textSize="18sp"
-                    android:gravity="center_horizontal"/>
+                    android:gravity="center_horizontal"
+                    android:padding="10dp" />
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150dp"
                 android:layout_margin="10dp"
                 android:id="@+id/Answer4"
+                android:elevation="10px"
                 android:onClick="checkAnswer">
                 <!-- content goes here -->
                 <TextView
                     android:id="@+id/Answert4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+                    android:layout_margin="4dp"
                     android:textColor="#000"
                     android:textSize="18sp"
-                    android:gravity="center_horizontal"/>
+                    android:gravity="center_horizontal"
+                    android:padding="10dp" />
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150dp"
-                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:id="@+id/Answer5"
-                android:onClick="checkAnswer">
-                <!-- content goes here -->
+                android:elevation="10px"
+                android:onClick="checkAnswer"
+                android:layout_marginBottom="20dp">
                 <TextView
                     android:id="@+id/Answert5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+                    android:layout_margin="4dp"
                     android:textColor="#000"
                     android:textSize="18sp"
-                    android:gravity="center_horizontal"/>
+                    android:gravity="center_horizontal"
+                    android:padding="10dp" />
 
             </android.support.v7.widget.CardView>
 
@@ -153,7 +161,9 @@
         android:clickable="true"
         android:text="Next"
         android:layout_gravity="right"
+        android:textColor="@color/colorPrimary"
         android:onClick="next"
+        android:background="@drawable/rounded"
         app:layout_anchorGravity="bottom|right|end" />
 
 </LinearLayout>

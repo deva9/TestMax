@@ -54,6 +54,7 @@ public class ReviewActivity extends AppCompatActivity {
         }
         scrollView.smoothScrollTo(0,0);
         CardView card=findViewById(R.id.cardAll);
+        card.setRadius(60);
         ViewGroup viewGroup=(ViewGroup)card.getChildAt(0);
         for(int i=1;i<viewGroup.getChildCount();i++){
             CardView temp=(CardView) viewGroup.getChildAt(i);
@@ -82,10 +83,10 @@ public class ReviewActivity extends AppCompatActivity {
         CardView card=findViewById(R.id.cardAll);
         ViewGroup viewGroup=(ViewGroup)card.getChildAt(0);
         CardView cardView1=(CardView) viewGroup.getChildAt(correct);
-        cardView1.setBackgroundColor(Color.parseColor("#00ff00"));
+        cardView1.setBackgroundColor(Color.parseColor("#66b032"));
         if(wrong!=-1) {
             cardView1=(CardView) viewGroup.getChildAt(wrong);
-            cardView1.setBackgroundColor(Color.parseColor("#ff0000"));
+            cardView1.setBackgroundColor(Color.parseColor("#fe2612"));
         }
     }
 

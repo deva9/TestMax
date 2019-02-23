@@ -5,12 +5,10 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +22,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 import jxl.Cell;
 import jxl.Sheet;
@@ -37,15 +36,14 @@ public class MainActivity extends AppCompatActivity {
     public static final String filename="Questions.xls"; //Name of the excel file
     public static Map<String, List<String>> allAnswer=new HashMap<>();
     public static Map<String, String> correctAns=new HashMap<>();
-    public static Map<String, List<String>> categories=new HashMap<>();
+    public static Map<String, List<String>> categories=new TreeMap<>();
     public static Map<String, String> questions=new HashMap<>();
     public static Set<String> unanswered=new HashSet<>();
     public static Map<String, List<String>> review=new HashMap<>();
     String correctAll,correct1,correct2;
-    String[] check={"Argument Structure Questions","Main Point Questions"};
+    public static String[] check={"Argument Structure Questions","Main Point Questions"};
     public static int[] scores={0,0,0};
     public static int[] attempt={0,0,0};
-    public static int[] reviews={0,0,0};
     public static boolean read=true;
 
     @Override
@@ -57,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
         unanswered=new HashSet<>(allAnswer.keySet());
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        CardView cardView=findViewById(R.id.cardAll);
+        cardView.setRadius(50);
+        cardView=findViewById(R.id.cardArg);
+        cardView.setRadius(50);
+        cardView=findViewById(R.id.cardMain);
+        cardView.setRadius(50);
         rePaint();
     }
 
@@ -74,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         if(review.size()==0 || (!val.equals("All") && !review.containsKey(val))) {
-            Toast.makeText(this, "Sorry, not possible", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No questions to review in this section", Toast.LENGTH_SHORT).show();
             return;
         }
         Intent intent=new Intent(MainActivity.this, ReviewActivity.class);
@@ -89,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()){
             case R.id.cardAll:
                 val="All";
+                idx=0;
                 break;
             case R.id.cardArg:
                 val="Argument";
@@ -123,8 +128,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 unanswered=new HashSet<>(allAnswer.keySet());
                 coordinatorLayout=findViewById(R.id.coordinator);
-                Snackbar snackbar = Snackbar.make(coordinatorLayout, "Recorded responses have been reset", Snackbar.LENGTH_LONG);
-                snackbar.show();
                 Arrays.fill(scores,0);
                 Arrays.fill(attempt,0);
                 review.clear();
@@ -140,28 +143,6 @@ public class MainActivity extends AppCompatActivity {
         alertDialogBuilder.show();
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     public void readFile(){         //Reads the excel file and populates the data to maps
         try{
@@ -223,28 +204,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void rePaint(){
-        correctAll=scores[0]+"/";
         TextView score1=findViewById(R.id.progress1);
         TextView score11=findViewById(R.id.progress11);
+        correctAll=scores[0]+"/";
         score1.setText(correctAll+questions.size());
         correctAll=attempt[0]+"/";
         score11.setText(correctAll+questions.size());
 
-        correct1=scores[1]+"/";
         TextView score2=findViewById(R.id.progress2);
         TextView score22=findViewById(R.id.progress22);
-        TextView category=findViewById(R.id.category2);
-        score2.setText(correct1+""+categories.get(category.getText()).size());
+        TextView category1=findViewById(R.id.category2);
+        correct1=scores[1]+"/";
+        score2.setText(correct1+""+categories.get(category1.getText()).size());
         correct1=attempt[1]+"/";
-        score22.setText(correct1+""+categories.get(category.getText()).size());
+        score22.setText(correct1+""+categories.get(category1.getText()).size());
 
-        correct2=scores[2]+"/";
         TextView score3=findViewById(R.id.progress3);
         TextView score33=findViewById(R.id.progress33);
-        category=findViewById(R.id.category3);
-        score3.setText(correct2+""+categories.get(category.getText()).size());
+        TextView category2=findViewById(R.id.category3);
+        correct2=scores[2]+"/";
+        score3.setText(correct2+""+categories.get(category2.getText()).size());
         correct2=attempt[2]+"/";
-        score33.setText(correct2+""+categories.get(category.getText()).size());
+        score33.setText(correct2+""+categories.get(category2.getText()).size());
     }
 
     @Override
