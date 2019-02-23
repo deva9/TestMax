@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/cardAll"
+        android:onClick="goNext">
+        <!-- content goes here -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/category1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="All categories"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/progress1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0/20"
+                    android:textSize="30dp"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Review"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="review"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/cardArg"
+        android:onClick="goNext">
+        <!-- content goes here -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/category2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Argument Structure Questions"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/progress2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0/20"
+                    android:gravity="center_horizontal"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Review"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="review"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/cardMain"
+        android:onClick="goNext">
+        <!-- content goes here -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/category3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Main Point Questions"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/progress3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0/20"
+                    android:gravity="center_horizontal"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Review"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="review"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

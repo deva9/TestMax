@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".DisplayActivity"
+    android:id="@+id/scroller">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/categoryValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textStyle="bold|italic"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/cardAll">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:gravity="center_horizontal"/>
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:layout_margin="10dp"
+                android:id="@+id/Answer1"
+                android:onClick="checkAnswer">
+                <!-- content goes here -->
+                    <TextView
+                        android:id="@+id/Answert1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:gravity="center_horizontal"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:layout_margin="10dp"
+                android:id="@+id/Answer2"
+                android:onClick="checkAnswer">
+                <!-- content goes here -->
+                <TextView
+                    android:id="@+id/Answert2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:layout_margin="10dp"
+                android:id="@+id/Answer3"
+                android:onClick="checkAnswer">
+                <!-- content goes here -->
+                <TextView
+                    android:id="@+id/Answert3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:layout_margin="10dp"
+                android:id="@+id/Answer4"
+                android:onClick="checkAnswer">
+                <!-- content goes here -->
+                <TextView
+                    android:id="@+id/Answert4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:layout_margin="10dp"
+                android:id="@+id/Answer5"
+                android:onClick="checkAnswer">
+                <!-- content goes here -->
+                <TextView
+                    android:id="@+id/Answert5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"/>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:text="Next"
+        android:layout_gravity="right"
+        android:onClick="next"
+        app:layout_anchorGravity="bottom|right|end" />
+
+</LinearLayout>
+</ScrollView>
